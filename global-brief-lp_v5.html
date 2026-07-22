@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球商業脈絡 · 本月精選｜風傳媒 × 華爾街日報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EEE2; --paper-2:#FBF8F1;
+    --ink:#1A1712; --ink-soft:#4A443B; --muted:#7A7264;
+    --storm:#A6141A; --storm-dk:#7C0F13;
+    --rule:#D7CFBD; --rule-dk:#B9AF97;
+    --night:#16130E; --night-2:#221C14; --night-line:#3A3226;
+    --brass:#9C7C3C; --paper-on-night:#EDE6D6;
+    --serif:"Source Serif 4","Noto Serif TC",Georgia,"Songti TC",serif;
+    --sans:"Inter","Noto Sans TC",-apple-system,"PingFang TC",sans-serif;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.72;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:var(--wrap); margin:0 auto; padding:0 28px}
+  a{color:inherit}
+  ::selection{background:var(--storm); color:#fff}
+
+  /* ---------- type helpers ---------- */
+  .kicker{
+    font-size:12px; font-weight:600; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--storm);
+    display:inline-block;
+  }
+  .kicker .cjk{letter-spacing:.14em}
+  .serif{font-family:var(--serif)}
+  h1,h2,h3{font-family:var(--serif); font-weight:700; line-height:1.14; letter-spacing:-.01em}
+
+  /* ---------- masthead ---------- */
+  .mast{border-bottom:2px solid var(--ink); background:var(--paper)}
+  .mast .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:16px; padding-bottom:14px}
+  .brand{font-family:var(--serif); font-weight:700; font-size:19px; letter-spacing:.01em}
+  .brand .x{color:var(--storm); margin:0 .28em; font-weight:400}
+  .mast-meta{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-align:right}
+  .mast-meta b{color:var(--ink); font-weight:600}
+  @media(max-width:640px){
+    .mast .wrap{flex-direction:column; gap:8px; align-items:flex-start}
+    .mast-meta{text-align:left}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 56px; border-bottom:1px solid var(--rule)}
+  .hero-grid{display:grid; grid-template-columns:1.55fr .95fr; gap:56px; align-items:start}
+  .hero h1{font-size:clamp(38px,5.4vw,64px); margin:18px 0 22px}
+  .hero h1 em{font-style:normal; color:var(--storm)}
+  .lede{font-size:20px; color:var(--ink-soft); max-width:34em; margin-bottom:18px}
+  .pain{font-family:var(--serif); font-style:italic; font-size:19px; color:var(--ink);
+    border-left:3px solid var(--storm); padding-left:18px; margin:22px 0 30px; max-width:33em}
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+  .cta-lead{font-size:13px; color:var(--muted); font-weight:600}
+  .btn{
+    font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:.01em;
+    padding:15px 26px; border:1.5px solid transparent; cursor:pointer;
+    display:inline-flex; align-items:center; gap:9px; text-decoration:none;
+    transition:transform .16s ease, background .16s ease, color .16s ease, box-shadow .16s ease;
+  }
+  .btn-primary{background:var(--storm); color:#fff; border-color:var(--storm)}
+  .btn-primary:hover{background:var(--storm-dk); border-color:var(--storm-dk); transform:translateY(-2px)}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper); transform:translateY(-2px)}
+  .btn .arrow{transition:transform .16s ease}
+  .btn:hover .arrow{transform:translateX(3px)}
+  .trust{font-size:13px; color:var(--muted); margin-top:20px; max-width:32em}
+  .trust b{color:var(--ink-soft); font-weight:600}
+
+  /* THE CUT clipping */
+  .cut{background:var(--paper-2); border:1px solid var(--rule-dk); padding:22px 22px 20px}
+  .cut-head{display:flex; align-items:baseline; justify-content:space-between; border-bottom:2px solid var(--ink); padding-bottom:9px; margin-bottom:4px}
+  .cut-head .t{font-family:var(--serif); font-weight:700; font-size:16px; letter-spacing:.02em}
+  .cut-head .n{font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted)}
+  .clip{padding:15px 0; border-bottom:1px solid var(--rule)}
+  .clip:last-child{border-bottom:0; padding-bottom:2px}
+  .clip .src{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--storm); font-weight:600}
+  .clip h4{font-family:var(--serif); font-weight:700; font-size:16.5px; line-height:1.28; margin:5px 0 6px}
+  .clip .note{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--ink-soft); line-height:1.5}
+  .clip .note b{font-style:normal; color:var(--storm); font-weight:600}
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr; gap:40px}
+    .hero{padding:44px 0 40px}
+  }
+
+  /* ---------- section frame ---------- */
+  section{padding:66px 0}
+  .sec-eyebrow{display:flex; align-items:center; gap:14px; margin-bottom:26px}
+  .sec-eyebrow::after{content:""; flex:1; height:1px; background:var(--rule-dk)}
+
+  /* ---------- why it matters ---------- */
+  .why{border-bottom:1px solid var(--rule)}
+  .why-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:52px; align-items:start}
+  .why h2{font-size:clamp(27px,3.4vw,36px); margin-bottom:8px; max-width:12em}
+  .why .body p{margin-bottom:16px; color:var(--ink-soft)}
+  .dropcap::first-letter{
+    font-family:var(--serif); font-weight:700; color:var(--storm);
+    float:left; font-size:64px; line-height:.82; padding:6px 10px 0 0;
+  }
+  .pull{font-family:var(--serif); font-size:22px; line-height:1.4; color:var(--ink);
+    border-top:2px solid var(--ink); border-bottom:1px solid var(--rule); padding:20px 0; margin-top:8px}
+  .pull b{color:var(--storm)}
+  @media(max-width:860px){.why-grid{grid-template-columns:1fr; gap:30px}}
+
+  /* ---------- monthly theme (swappable template) ---------- */
+  .theme{background:var(--paper-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+  .theme-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:34px}
+  .theme-head h2{font-size:clamp(28px,3.6vw,40px)}
+  .theme-head h2 em{font-style:normal; color:var(--storm)}
+  .theme-head .issue{font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-align:right; white-space:nowrap}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+  .card{background:var(--paper); border:1px solid var(--rule-dk); padding:0; display:flex; flex-direction:column;
+    transition:transform .18s ease, box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px); box-shadow:0 14px 30px -18px rgba(26,23,18,.5)}
+  .card-top{height:4px; background:var(--storm)}
+  .card-in{padding:22px 22px 20px; display:flex; flex-direction:column; flex:1}
+  .card .track{font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--storm); font-weight:600}
+  .card h3{font-size:21px; line-height:1.24; margin:9px 0 10px}
+  .card .teaser{font-size:15px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px}
+  .editor{background:var(--paper-2); border-left:3px solid var(--storm); padding:12px 14px; margin-top:auto}
+  .editor .lab{font-size:11px; letter-spacing:.12em; color:var(--storm); font-weight:600; margin-bottom:4px}
+  .editor p{font-family:var(--serif); font-style:italic; font-size:14px; color:var(--ink); line-height:1.5}
+  .picks-cta{text-align:center; padding-top:34px}
+  @media(max-width:860px){.cards{grid-template-columns:1fr}}
+
+  /* ---------- subscribe (dark) ---------- */
+  .sub{background:var(--night); color:var(--paper-on-night)}
+  .sub .kicker{color:#E7A0A3}
+  .sub h2{color:#fff; font-size:clamp(26px,3.5vw,38px); max-width:16em; margin-bottom:14px}
+  .sub .intro{color:#C9C1B0; max-width:38em; margin-bottom:38px}
+  .tiers{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--night-line)}
+  .tier{padding:30px 30px 34px}
+  .tier + .tier{border-left:1px solid var(--night-line)}
+  .tier .name{font-family:var(--serif); font-size:22px; font-weight:700; color:#fff; margin-bottom:4px}
+  .tier .price{font-size:13px; color:#B7AE9C; margin-bottom:18px; letter-spacing:.02em}
+  .tier ul{list-style:none; display:flex; flex-direction:column; gap:11px; margin-bottom:24px}
+  .tier li{font-size:14.5px; color:#D9D1C0; padding-left:24px; position:relative; line-height:1.5}
+  .tier li::before{content:"—"; position:absolute; left:0; color:var(--storm)}
+  .tier.vvip{background:var(--night-2)}
+  .tier.vvip .name{color:#F1D9A6}
+  .tier.vvip li::before{color:var(--brass)}
+  .flag{display:inline-block; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--night); background:var(--brass); padding:3px 9px; margin-bottom:12px; font-weight:600}
+  .btn-onnight{background:transparent; color:#fff; border-color:#6E6250}
+  .btn-onnight:hover{background:#fff; color:var(--night); border-color:#fff; transform:translateY(-2px)}
+  .btn-brass{background:var(--brass); color:var(--night); border-color:var(--brass)}
+  .btn-brass:hover{background:#B08F49; border-color:#B08F49; transform:translateY(-2px)}
+  @media(max-width:720px){.tiers{grid-template-columns:1fr} .tier + .tier{border-left:0; border-top:1px solid var(--night-line)}}
+
+  /* ---------- join form ---------- */
+  .join{border-bottom:1px solid var(--rule)}
+  .join-grid{display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:center}
+  .join .lead-copy h2{font-size:clamp(26px,3.4vw,36px); margin-bottom:14px; max-width:11em}
+  .join .lead-copy p{color:var(--ink-soft); max-width:30em; margin-bottom:12px}
+  .join .lead-copy .fine{font-size:13.5px; color:var(--muted)}
+  .form-card{background:var(--paper-2); border:1px solid var(--rule-dk); padding:32px 30px}
+  .form-card h3{font-size:20px; margin-bottom:20px; padding-bottom:14px; border-bottom:2px solid var(--ink)}
+  .field{margin-bottom:20px}
+  .field label{display:block; font-size:13px; font-weight:600; letter-spacing:.04em; margin-bottom:8px; color:var(--ink)}
+  .field label .req{color:var(--storm)}
+  .field input[type=email]{
+    width:100%; font-family:var(--sans); font-size:16px; padding:13px 14px;
+    background:var(--paper); border:1px solid var(--rule-dk); color:var(--ink); border-radius:0;
+  }
+  .field input[type=email]:focus{outline:2px solid var(--storm); outline-offset:1px; border-color:var(--storm)}
+  .tracks{display:flex; gap:8px; flex-wrap:wrap}
+  .track-opt{position:relative}
+  .track-opt input{position:absolute; opacity:0; width:0; height:0}
+  .track-opt span{display:inline-block; font-size:13.5px; padding:9px 15px; border:1px solid var(--rule-dk); cursor:pointer; color:var(--ink-soft); transition:all .14s ease; user-select:none}
+  .track-opt input:checked + span{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+  .track-opt input:focus-visible + span{outline:2px solid var(--storm); outline-offset:2px}
+  .consent{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--ink-soft); line-height:1.5; margin-bottom:22px}
+  .consent input{margin-top:3px; accent-color:var(--storm); width:16px; height:16px; flex-shrink:0}
+  .consent a{color:var(--storm); text-decoration:underline}
+  .form-card .btn-primary{width:100%; justify-content:center; font-size:16px; padding:16px}
+  .form-alt{text-align:center; font-size:13.5px; color:var(--muted); margin-top:16px}
+  .form-alt a{color:var(--storm); font-weight:600; text-decoration:none}
+  .form-alt a:hover{text-decoration:underline}
+  .form-done{display:none; text-align:center; padding:14px 0}
+  .form-done.on{display:block}
+  .form-done .chk{width:48px; height:48px; border-radius:50%; background:var(--storm); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:14px}
+  .form-done h3{border:0; padding:0; margin-bottom:8px}
+  .form-done p{color:var(--ink-soft); font-size:15px}
+  .form-done .btn-primary{width:100%; justify-content:center; font-size:16px; padding:16px; margin-top:18px}
+  .form-done .form-alt{margin-top:16px}
+  @media(max-width:860px){.join-grid{grid-template-columns:1fr; gap:32px}}
+
+  /* ---------- faq ---------- */
+  .faq h2{font-size:clamp(25px,3.2vw,34px)}
+  .acc{border-top:1px solid var(--ink)}
+  .acc details{border-bottom:1px solid var(--rule)}
+  .acc summary{list-style:none; cursor:pointer; padding:20px 44px 20px 4px; position:relative;
+    font-family:var(--serif); font-weight:700; font-size:18.5px; color:var(--ink)}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary::after{content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-50%); font-size:26px; color:var(--storm); font-family:var(--sans); font-weight:400; transition:transform .2s ease}
+  .acc details[open] summary::after{content:"–"}
+  .acc .ans{padding:0 44px 22px 4px; color:var(--ink-soft); font-size:15.5px; line-height:1.7}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink); color:#B7AE9C; padding:44px 0 40px; font-size:13px; line-height:1.7}
+  footer .src{color:#8C8474; max-width:60em; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #33301F}
+  footer .base{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center}
+  footer .base .brand{color:#EDE6D6; font-size:15px}
+  footer .links a{color:#B7AE9C; text-decoration:none; margin-left:18px}
+  footer .links a:hover{color:#fff}
+  @media(max-width:640px){footer .links a{margin:0 18px 0 0}}
+
+  /* ---------- motion ---------- */
+  .reveal{opacity:0; transform:translateY(18px)}
+  .reveal.in{opacity:1; transform:none; transition:opacity .6s ease, transform .6s ease}
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto !important}
+    .reveal{opacity:1; transform:none; transition:none}
+    .btn,.card{transition:none}
+  }
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--storm); outline-offset:2px}
+  /* THE CUT — narrative + takes */
+  .cut .lead-note{font-family:var(--serif); font-size:15px; line-height:1.62; color:var(--ink-soft); padding:14px 0 6px}
+  .cut .takes{list-style:none}
+  .cut .take{padding:12px 0; border-top:1px solid var(--rule)}
+  .cut .take .src{display:block; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--storm); font-weight:600; margin-bottom:4px}
+  .cut .take .txt{font-family:var(--serif); font-size:14px; line-height:1.45; color:var(--ink)}
+
+  /* theme — five picks reading list */
+  .picks{border-top:2px solid var(--ink)}
+  .pick{display:grid; grid-template-columns:150px 1fr; gap:26px; padding:26px 0; border-bottom:1px solid var(--rule); align-items:start}
+  .pick .idx{font-family:var(--serif); font-weight:700; font-size:34px; color:var(--storm); line-height:1}
+  .pick .idx .cat{display:block; font-family:var(--sans); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:10px; line-height:1.4}
+  .pick-title{font-family:var(--serif); font-weight:700; font-size:23px; line-height:1.26; margin-bottom:9px; transition:color .15s ease}
+  .pick:hover .pick-title{color:var(--storm)}
+  .pick .desc{font-size:15.5px; color:var(--ink-soft); line-height:1.62; margin-bottom:13px; max-width:50em}
+  @media(max-width:640px){
+    .pick{grid-template-columns:1fr; gap:6px}
+    .pick .idx{font-size:26px}
+    .pick .idx .cat{display:inline; margin:0 0 0 12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ MASTHEAD ============ -->
+<header class="mast">
+  <div class="wrap">
+    <div class="brand">風傳媒<span class="x">×</span>華爾街日報</div>
+    <div class="mast-meta"><b>MONTHLY BRIEF · 2026 年 7 月號</b></div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="kicker">每月編輯精選 · 全球商業脈絡</span>
+      <h1>導讀華爾街 <em>掌握全世界</em></h1>
+      <p class="lede">每月由資深財經主編導讀《華爾街日報》國際新聞，為 CEO、投資人與專業經理人，濃縮成一份看得懂、也用得上的全球商業知識包。</p>
+      <p class="pain">資訊太雜亂、時間太破碎，別擔心！我們每月幫你導讀，替你篩選重要資訊，把時間集中在有利的決策上。</p>
+      <div class="cta-row">
+        <a href="#join" class="btn btn-primary">免費加入會員，領取限時開放主題包 <span class="arrow">→</span></a>
+        <span class="cta-lead">你也可以 →</span>
+        <a href="#subscribe" class="btn btn-ghost">直接訂閱華爾街日報 VVIP 方案，每天只要 10 元</a>
+      </div>
+    </div>
+
+    <aside class="cut reveal">
+      <div class="cut-head"><span class="t">本月觀點</span></div>
+      <p class="lead-note">二〇二六年，AI 已經不是「會不會來」的問題。它同時在改寫科技的能力邊界、走進企業的第一批人才、消費與國力的新動能，甚至連聯準會的利率判斷。這個月，我們從《華爾街日報》選了五篇，帶你一次看懂。</p>
+      <ul class="takes">
+        <li class="take"><span class="src">科技浪潮</span><span class="txt">問題不是要不要上船，是你站在浪頭還是浪腳。</span></li>
+        <li class="take"><span class="src">能力邊界</span><span class="txt">當 AI 連最抽象的領域都能突破，「它只能做重複工作」已成過去式。</span></li>
+        <li class="take"><span class="src">人才</span><span class="txt">被重新定義的不是新鮮人，是「入門工作」本身的價值。</span></li>
+        <li class="take"><span class="src">消費與國力</span><span class="txt">一個看消費、一個看國力，都在指出錢與資源正流向哪。</span></li>
+        <li class="take"><span class="src">貨幣政策</span><span class="txt">連央行都在為 AI 抓不準利率——這條線直接連到你的資金成本。</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ WHY IT MATTERS（已依文案表移除） ============ -->
+
+<!-- ==================================================================
+     本月主題包 · 每月更新區塊（MONTHLY THEME TEMPLATE）
+     ▸ 每月上線時，只需替換以下：期號、標題主題、五篇 .pick 的內容（分類、標題、導言）。
+     ▸ 前面 THE CUT 的觀點敘事與五則短評也一併替換。
+     ▸ 其餘版型、CTA、樣式皆固定，不需更動。
+     ================================================================== -->
+<section class="theme" data-template="monthly-theme">
+  <div class="wrap">
+    <div class="theme-head reveal">
+      <div>
+        <span class="kicker">本月主題包</span>
+        <h2 style="margin-top:12px">AI Agent 元年，<em>你更需要搞懂全球商業脈絡</em></h2>
+      </div>
+      <div class="issue">2026 年 7 月號<br>五篇精選 · 一次看懂全局</div>
+    </div>
+
+    <div class="picks">
+      <article class="pick reveal">
+        <div class="idx">01<span class="cat">科技浪潮 · The wave</span></div>
+        <div>
+          <h3 class="pick-title">AI 是十三年一遇的科技「海嘯」</h3>
+          <p class="desc">創投教父約翰・杜爾把 AI 列為繼 PC、網路、iPhone 之後最大的一波浪潮——每十三年席捲一次，而這次創造的價值難以估量。</p>
+        </div>
+      </article>
+      <article class="pick reveal">
+        <div class="idx">02<span class="cat">能力邊界 · The frontier</span></div>
+        <div>
+          <h3 class="pick-title">AI 破解懸置近百年的數學難題</h3>
+          <p class="desc">AI 不眠不休持續推理，攻克了頂尖數學家懸置近一世紀的難題，且成本極低；它已能在最抽象的科學領域產出突破，而不只是輔助。</p>
+        </div>
+      </article>
+      <article class="pick reveal">
+        <div class="idx">03<span class="cat">人才 · Talent</span></div>
+        <div>
+          <h3 class="pick-title">第一屆「AI 原住民」畢業，企業接得住嗎</h3>
+          <p class="desc">把 ChatGPT 當工具長大的第一屆畢業生正走進職場。企業一邊搶著要這批「AI 先行者」，一邊縮減傳統入門職缺——入門工作的樣貌正被重寫。</p>
+        </div>
+      </article>
+      <article class="pick reveal">
+        <div class="idx">04<span class="cat">消費與國力 · China</span></div>
+        <div>
+          <h3 class="pick-title">Labubu 與機器人交通警察：中國經濟的兩個縮影</h3>
+          <p class="desc">爆紅的 Labubu 反映年輕世代的「情緒消費」，杭州街頭的機器人警察展示國家的科技雄心；兩個縮影，拼出中國經濟新動能的方向。</p>
+        </div>
+      </article>
+      <article class="pick reveal">
+        <div class="idx">05<span class="cat">貨幣政策 · Policy</span></div>
+        <div>
+          <h3 class="pick-title">聯準會主席華許的首場大考：如何判讀 AI 繁榮</h3>
+          <p class="desc">新任聯準會主席華許的第一道難題不是升息或降息，而是如何判讀 AI 帶動的繁榮——因為它牽動利率，也牽動每個人的資金成本。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="picks-cta reveal">
+      <a href="#join" class="btn btn-primary">加入會員，馬上領取限時主題包 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+<!-- ================= /本月主題包 ================= -->
+
+<!-- ============ SUBSCRIBE (dark) ============ -->
+<section class="sub" id="subscribe">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal" style="margin-bottom:22px"><span class="kicker">一鍵訂閱，跟上世界</span></div>
+    <h2 class="reveal">風傳媒與華爾街日報攜手合作，持續鎖定國際觀點，放大你的視角。</h2>
+    <p class="intro reveal">你可以先加入會員領取本月主題包，再升級成 VVIP，無限瀏覽所有華爾街日報中英日文版深度文章、專題。</p>
+
+    <div class="tiers reveal">
+      <div class="tier">
+        <div class="name">免費會員</div>
+        <div class="price">NT$0 · 立即開始</div>
+        <ul>
+          <li>每月一份主題包：五篇《華爾街日報》精選報導的導讀</li>
+          <li>主題包 PDF 下載（加入會員後解鎖）</li>
+        </ul>
+        <a href="#join" class="btn btn-onnight">免費加入會員 →</a>
+      </div>
+      <div class="tier vvip">
+        <span class="flag">給高度思維的你</span>
+        <div class="name">VVIP 訂閱</div>
+        <div class="price">風傳媒 × 華爾街日報全站解鎖</div>
+        <ul>
+          <li>本月主題包完整全文，含延伸報導</li>
+          <li>每天國際、財經新聞與全球同步</li>
+          <li>每月深度專題與跨主題脈絡整理</li>
+          <li>歷史主題全庫，隨時回查</li>
+        </ul>
+        <a href="#join" class="btn btn-brass">馬上訂閱享優惠方案 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN FORM ============ -->
+<section class="join" id="join">
+  <div class="wrap join-grid">
+    <div class="lead-copy reveal">
+      <span class="kicker">加入會員 · <span class="cjk">開始閱讀本月精選</span></span>
+      <h2 style="margin-top:12px">留個 Email，本月主題包立刻是你的。</h2>
+      <p>免費加入，成功後立即解鎖本月主題包的下載連結。不必填一堆資料，只要留個 Email 就好。</p>
+      <p class="fine">想要完整全文、每周更新與歷史全庫？加入後隨時可升級 VVIP，或<a href="#subscribe" style="color:var(--storm)">直接訂閱</a>。</p>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="joinForm" novalidate>
+        <h3>加入會員，領取本月主題包</h3>
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required autocomplete="email">
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consent" required>
+          <span>我同意收到風傳媒的主題包與相關內容通知，並已閱讀<a href="#">隱私權政策</a>。可隨時取消訂閱。</span>
+        </label>
+        <button type="submit" class="btn btn-primary">加入會員，領取本月主題包 →</button>
+        <p class="form-alt">已經是會員？<a href="#" id="btnStormLogin">登入取得下載</a></p>
+      </form>
+      <!-- STATE B：完成加入（表單送出成功；後端已建立 storm.mg 會員） -->
+      <div class="form-done" id="joinDone">
+        <div class="chk">✓</div>
+        <h3>歡迎加入。</h3>
+        <p>本月主題包已為你解鎖，下載連結也已寄到你的信箱。</p>
+        <a href="#" class="btn btn-primary" id="btnDownloadDone">下載本月主題包 PDF →</a>
+      </div>
+      <!-- STATE C：已登入會員（onload 讀到 smgAuth，或登入導回後） -->
+      <div class="form-done" id="memberCard">
+        <div class="chk">✓</div>
+        <h3>歡迎回來。</h3>
+        <p>你已登入風傳媒會員，本月主題包已解鎖。</p>
+        <a href="#" class="btn btn-primary" id="btnDownloadMember">下載本月主題包 PDF →</a>
+        <p class="form-alt">想看完整全文與歷史全庫？<a href="#subscribe">升級 VVIP →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-eyebrow reveal"><span class="kicker">FAQ · <span class="cjk">常見問題</span></span></div>
+    <h2 class="reveal" style="margin-bottom:28px">加入之前，你可能想問</h2>
+    <div class="acc reveal">
+      <details><summary>加入免費會員後，我可以看到什麼？</summary>
+        <div class="ans">你會立即取得本月主題包：五篇《華爾街日報》精選報導的導讀、編輯短評，以及可下載的 PDF。每月更新一次主題。</div></details>
+      <details><summary>「主題包」是什麼？是 AI 工具教學嗎？</summary>
+        <div class="ans">不是工具教學。主題包是風傳媒編輯從《華爾街日報》精選當月最關鍵的國際報導，替台灣決策者整理成「看得懂、用得上」的脈絡，重點是判斷，不是操作。</div></details>
+      <details><summary>免費會員和 VVIP 訂閱差在哪？</summary>
+        <div class="ans">免費會員每月拿一份主題包（精選導讀＋短評）。VVIP 則有完整全文、每周更新、每月深度專題，以及歷史主題全庫，適合需要持續掌握全局的人。</div></details>
+      <details><summary>我可以不加入會員，直接訂閱嗎？</summary>
+        <div class="ans">可以。若你已經確定要完整版，可直接前往<a href="#subscribe" style="color:var(--storm)">訂閱方案</a>；訂閱同時會建立你的會員身分。</div></details>
+      <details><summary>之後每個月都會有新主題嗎？</summary>
+        <div class="ans">是。每月會由編輯選出一個當月最值得決策者關注的主題（例如本月是 AI Agent），並更新這份主題包。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <p class="src">內容來源說明：本站精選報導引用並改寫自《華爾街日報》(The Wall Street Journal)，經授權由風傳媒編輯團隊翻譯、摘選與整理，供台灣讀者理解全球商業脈絡之用。原始著作權歸屬 Dow Jones &amp; Company 及各報導作者。</p>
+    <div class="base">
+      <span class="brand">風傳媒 × 華爾街日報</span>
+      <span class="links">
+        <a href="#">隱私權政策</a>
+        <a href="#">取消訂閱</a>
+        <a href="#">聯絡我們</a>
+        <span style="color:#6E6650">© 2026 Storm Media Group · storm.mg</span>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ===== 會員登入判斷 · skill: event-page-login-verify =====
+  // 前提：本頁部署於 event.storm.mg（*.storm.mg 才讀得到 smgAuth cookie）。
+  // 已確認：填 email 加入會員後，後端會建立 storm.mg 帳號並寫入 smgAuth，
+  //         因此「加入會員」與「登入」兩條路徑收斂為同一個已登入會員狀態。
+  (function(){
+    var BRIEF_PDF_URL = '#'; // TODO(RD)：換成本月主題包實際 PDF 連結
+
+    var form   = document.getElementById('joinForm');
+    var done   = document.getElementById('joinDone');   // STATE B：剛加入
+    var member = document.getElementById('memberCard'); // STATE C：已登入
+
+    // skill 核心 1：讀 smgAuth cookie 判斷是否已登入（純前端，不打 API）
+    function isStormMemberLoggedIn(){
+      return document.cookie.split('; ').some(function(row){
+        return row.startsWith('smgAuth=');
+      });
+    }
+    // skill 核心 2：組 backUrl（含 query string，整串 encode）並導向 storm.mg 登入頁
+    function redirectToStormLogin(){
+      var backUrl = encodeURIComponent(window.location.href);
+      window.location.href = 'https://www.storm.mg/auth/signin?backUrl=' + backUrl;
+    }
+    function goDownload(){
+      // TODO(RD)：可在此埋 download 事件（Meta Pixel / GA）供 usage 追蹤
+      if(BRIEF_PDF_URL && BRIEF_PDF_URL !== '#'){ window.location.href = BRIEF_PDF_URL; }
+    }
+
+    // onload：已登入 → 直接顯示 STATE C（略過 email）；否則維持表單
+    if(isStormMemberLoggedIn()){
+      if(form) form.style.display = 'none';
+      if(member) member.classList.add('on');
+    }
+
+    // 老會員入口：導向 storm.mg 登入，登入後導回本頁 → onload 命中 STATE C
+    var loginLink = document.getElementById('btnStormLogin');
+    if(loginLink){
+      loginLink.addEventListener('click', function(e){ e.preventDefault(); redirectToStormLogin(); });
+    }
+
+    // 新訪客送出表單 → 後端建立會員並寄信 → 顯示 STATE B
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = document.getElementById('email');
+        var consent = document.getElementById('consent');
+        if(!email.value || email.value.indexOf('@') === -1){ email.focus(); return; }
+        if(!consent.checked){ consent.focus(); return; }
+        // TODO(RD)：呼叫收單/建會員 API（成功後 storm.mg 會寫入 smgAuth）；
+        //           建議在此埋 lead 事件供 article-to-lead / lead-to-subscription 追蹤。
+        form.style.display = 'none';
+        done.classList.add('on');
+      });
+    }
+
+    // 兩個下載按鈕（STATE B / C）
+    var dlDone = document.getElementById('btnDownloadDone');
+    if(dlDone) dlDone.addEventListener('click', function(e){ e.preventDefault(); goDownload(); });
+    var dlMember = document.getElementById('btnDownloadMember');
+    if(dlMember) dlMember.addEventListener('click', function(e){ e.preventDefault(); goDownload(); });
+
+    // 預覽用（github.io 讀不到真 cookie）：console 執行 __previewLoggedIn() 可模擬已登入
+    window.__previewLoggedIn = function(){
+      if(form) form.style.display = 'none';
+      if(done) done.classList.remove('on');
+      if(member) member.classList.add('on');
+    };
+  })();
+
+  // Scroll reveal
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(el){el.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // ===== 測試面板（僅限非 storm.mg 網域，正式上線自動隱藏）=====
+  // 用途：不必開 console 就能點著預覽 #join 三態切換。
+  // 判斷：hostname 不含 'storm.mg' 才顯示；部署到 event.storm.mg 後完全不出現。
+  (function(){
+    if(location.hostname.indexOf('storm.mg') !== -1) return; // 正式網域：不顯示
+
+    var form   = document.getElementById('joinForm');
+    var done   = document.getElementById('joinDone');
+    var member = document.getElementById('memberCard');
+    if(!form || !done || !member) return;
+
+    function showState(s){
+      form.style.display = (s === 'form') ? '' : 'none';
+      done.classList.toggle('on', s === 'done');
+      member.classList.toggle('on', s === 'member');
+      if(s === 'form'){ done.classList.remove('on'); member.classList.remove('on'); }
+    }
+
+    var panel = document.createElement('div');
+    panel.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:9999;background:#1A1712;color:#fff;'
+      + 'font:12px/1.4 system-ui,sans-serif;padding:12px 14px;border-radius:10px;'
+      + 'box-shadow:0 8px 24px -8px rgba(0,0,0,.5);max-width:220px';
+    panel.innerHTML =
+        '<div style="font-weight:700;letter-spacing:.04em;margin-bottom:8px;color:#FFC000">🔧 測試面板（僅預覽環境）</div>'
+      + '<div style="display:flex;flex-direction:column;gap:6px">'
+      + '  <button data-s="form"   style="cursor:pointer;padding:6px 8px;border:0;border-radius:6px">A · 未登入（表單）</button>'
+      + '  <button data-s="done"   style="cursor:pointer;padding:6px 8px;border:0;border-radius:6px">B · 剛加入</button>'
+      + '  <button data-s="member" style="cursor:pointer;padding:6px 8px;border:0;border-radius:6px">C · 已登入會員</button>'
+      + '</div>'
+      + '<div style="margin-top:8px;opacity:.65;font-size:10.5px">此面板不會出現在 event.storm.mg</div>';
+    document.body.appendChild(panel);
+
+    panel.querySelectorAll('button[data-s]').forEach(function(b){
+      b.addEventListener('click', function(){
+        showState(b.getAttribute('data-s'));
+        var section = document.getElementById('join');
+        if(section) section.scrollIntoView({behavior:'smooth', block:'center'});
+      });
+    });
+  })();
+</script>
+</body>
+</html>
